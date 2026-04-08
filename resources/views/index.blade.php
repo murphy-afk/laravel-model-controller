@@ -7,10 +7,11 @@
   <title>Document</title>
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body class="container py-4 bg-light">
-  <h1 class="mb-4 text-center fw-bold">Movies</h1>
-  <div class="row g-4">
-    @foreach ($movies as $movie)
+<body>
+  <x-header>My Movies Laravel</x-header>
+  <div class="container">
+    <div class="row g-4 py-3 px-2">
+      @foreach ($movies as $movie)
       <div class="col-6 col-md-3">
         <x-card>
           <x-slot:title>{{ $movie['title'] }}</x-slot:title>
@@ -20,7 +21,8 @@
           <x-slot:vote>{{ $movie['vote'] }}</x-slot:vote>
         </x-card>
       </div>
-    @endforeach
+      @endforeach
+    </div>
   </div>
 </body>
 </html>
