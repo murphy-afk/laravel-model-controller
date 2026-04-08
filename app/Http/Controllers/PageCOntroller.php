@@ -10,10 +10,9 @@ class PageCOntroller extends Controller
     function welcome() {
         return view('welcome');
     }
-    function movies() {
+    function index() {
         $movies = Movie::all();
-        dd($movies);
 
-        return view('index');
+        return view('index', compact('movies'));
     }
 }
